@@ -1,6 +1,7 @@
 @import 'vars';
 @import 'fonts';
 @import 'reset';
+@import 'libs';
 @import 'global';
 
 .header{
@@ -146,6 +147,7 @@
 	}
 	&__form-btn{
 		@extend %btn;
+		cursor: pointer;
 	}
 }
 .footer-button{
@@ -167,6 +169,91 @@
 		margin-left: 14px;
 
 	}
+}
+
+
+.top-slider{
+	&__inner{
+		padding: 100px 0 45px;
+		background-color: $accent;
+	}
+	&__item{
+		max-width: 1170px;
+		margin: 0 auto;
+		display: flex !important;
+		justify-content: space-between;
+		height: 100%;
+		align-items: center;
+	}
+	&__title{
+		font-size: 72px;
+		line-height: 70px;
+		color: $title;
+		@extend %rubikmedium-500;
+	}
+	&__text{
+		margin: 42px 0;
+		@extend %rubikregular-400;
+		max-width: 370px;
+		color: $default;
+	}
+	&__btn{
+		@extend %btn;
+		display: inline-block;
+		padding: 22px 100px 22px 22px;
+		position: relative;
+	}
+	&__btn::after{
+		position: absolute;
+		content: "";
+		right: 19px;
+		top: 45%;
+		width: 23px;
+		height: 10px;
+		background-image: url('../images/arrow.png');
+		background-repeat: no-repeat;
+	}
+	&__img{
+		position: relative;
+	}
+	&__img::after{
+		position: absolute;
+		content: "";
+		right: 10%;
+		top: 10%;
+		width: 634px;
+		height: 634px;
+		background-image: url('../images/slider-bg.png');
+		background-repeat: no-repeat;
+	}
+}
+.slick-dots{
+	display: flex;
+	justify-content: center;
+	margin-top: 15px;
+	li{
+		margin: 0 5px;
+		button{
+			padding: 0;
+			border: none;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background-color: #fff;
+			font-size: 11px;
+			color: $title;
+			@extend %rubikmedium-500;
+			line-height: 9px;
+			text-align: center;
+			opacity: .3;
+		}
+		&.slick-active{
+			button{
+				opacity: 1;
+			}
+		}
+	}
+
 }
 
 @import 'media';
