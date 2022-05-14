@@ -1,0 +1,43 @@
+$accent: #fcd7b6;
+$default: #436372;
+$title: #243f4d;
+$title-section: #191919;
+$auxiliary: #a3bbc8;
+$bg: #fef7f0;
+
+%dmsansbold-700{
+	font-family: 'DMSans-Bold', sans-serif;
+	font-weight: 700;
+}
+%dmsansmedium-500{
+	font-family: 'DMSans-Medium', sans-serif;
+	font-weight: 500;
+}
+%dmsansregular-400{
+	font-family: 'DMSans-Regular', sans-serif;
+	font-weight: 400;
+}
+%poppinsbold-700{
+	font-family: 'Poppins-Bold', sans-serif;
+	font-weight: 700;
+}
+%rubikmedium-500{
+	font-family: 'Rubik-Medium', sans-serif;
+	font-weight: 500;
+}
+%rubikregular-400{
+	font-family: 'Rubik-Regular', sans-serif;
+	font-weight: 400;
+}
+
+
+%btn{
+	border:none;
+	padding: 13px;
+	background-color: $auxiliary;
+	font-size: 14px;
+	line-height: 21px;
+	color: #fff;
+	@extend %dmsansregular-400
+
+}
