@@ -255,6 +255,200 @@
 	}
 
 }
+.info{
+	background-color: $bg;
+	display: flex;
+	justify-content: space-around;
+	padding: 50px 0 46px;
+	align-items: center;
+	&__item{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__descr{
+		margin-left: 24px;
+	}
+	&__title{
+		@extend %dmsansbold-700;
+		line-height: 40px;
+		color: #414141;
+	}
+	&__text{
+		@extend %dmsansregular-400;
+		max-width: 213px;
+		font-size: 16px;
+		color: #585858;
+		line-height: 30px;
+	}
+}
+.product{
+	padding: 75px 0;
+	text-align: center;
+	&__items{
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 30px 40px;
+	}
+}
+.product-item{
+	width: 270px;
+	height: 380px;
+    box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    &__link-box{
+    	transition: all .5s;
+    	position: absolute;	
+    	top: 50%;
+    	left: 0;
+    	right: 0;
+    	justify-content: center;
+    	transform: translateY(500px);
+    	display: flex;
+    }
+    &__link{
+    	width: 45px;
+    	height: 45px;
+    	border-radius: 50%;
+    	background-color: #fff;
+    	margin: 0 8px;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	transition: all .3s;
+    }
+    &__link:hover{
+    	background-color: $auxiliary;
+    	path{
+    		fill: #fff;
+    	}
+    }
+    &__title{
+    	color: $title;
+    	font-size: 16px;
+    	@extend %dmsansmedium-500;
+    }
+    &__price{
+    	color: $auxiliary;
+    	@extend %dmsansbold-700;
+    	font-size: 16px;
+    }
+
+
+    &:hover{
+    	.product-item__link-box{
+    		transform: translateY(0);
+    	}
+    }
+}
+.mixitup-control-active{
+	color: $title-section;
+}
+
+.top{
+	padding: 105px 0;
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		grid-gap: 30px;
+	}
+}
+.top-item{
+	width: 870px;
+	height: 390px;
+	background-color: #feefe2;
+	position: relative;
+	&__img{
+		position: absolute;
+		top: -25%;
+		left: 20%;
+	}
+	&__descr{
+		margin: 0 auto;
+		max-width: 350px;
+		margin-left: 430px;
+		margin-top: 85px;
+	}
+	&__title{
+		@extend %dmsansbold-700;
+		font-size: 26px;
+		line-height: 32px;
+		color: $title;
+	}
+	&__text{
+		@extend %rubikregular-400;
+		font-size: 16px;
+		line-height: 30px;
+		color:$title;
+		margin-bottom: 35px;
+	}
+	&__btn{
+		@extend %rubikmedium-500;
+		font-size: 15px;
+		color: $default;
+		padding: 20px 86px 20px 20px;
+		border: 1px solid #b3b7b5;
+		border-radius: 4px;
+		position: relative;
+	}
+	&__btn::after{
+		content: "";
+		position: absolute;
+		width: 22px;
+		height: 9px;
+		background-image: url(../images/icons/arrow.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		top: 40%;
+		margin-left: 45px;
+	}
+}
+
+.design{
+	margin-bottom: 120px;
+	text-align: center;
+	&__items{
+		margin-top: 80px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 35px 30px;
+	}
+}
+.design-item{
+	text-align: left;
+	width: 370px;
+	background-color: #f8f8f8;
+	&__link{
+		width: 370px;
+		height: 246px;
+		overflow: hidden;
+		display: inline-block;
+	}
+	&__title{
+		margin: 43px 0 15px 35px;
+		@extend %dmsansbold-700;
+		font-size: 20px;
+		color: $title-section;
+		max-width: 175px;
+		line-height: 25px;
+	}
+	&__type{
+		line-height: 1;
+		color: $auxiliary;
+		@extend %dmsansbold-700;
+		margin-left: 35px;
+		font-size: 16px;
+	}
+	&__img{
+		margin-left: 50%;
+		margin-top: -10%;
+	}
+}
 
 @import 'media';
 

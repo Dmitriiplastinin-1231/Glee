@@ -20,6 +20,30 @@ main{
 	padding: 0 15px;
 }
 
+.container-content{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.title{
+	@extend %dmsansbold-700;
+	font-size: 36px;
+	color: $title-section;
+}
+.content-btn{
+	margin-top: 35px;
+}
+.content-btn__btn{
+	background-color: transparent;
+	border:none;
+	padding: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin: 0 5px;
+	@extend %dmsansbold-700;
+	font-size: 16px;
+	color: #8b8b8b;
+}
 .footer a{
 	color: #7b7b7b;
 	display: block;
