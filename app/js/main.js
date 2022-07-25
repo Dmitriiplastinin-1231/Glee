@@ -6,7 +6,9 @@ $(function() {
 		fade:true,
 		autoplay:true,
 		autoplaySpeed: 2000
-	})
+	});
+
+
 
 	
 	var containerEl1 = document.querySelector('[data-ref="filter"]');

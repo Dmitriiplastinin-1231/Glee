@@ -417,6 +417,7 @@
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 35px 30px;
+		margin-bottom: 120px;
 	}
 }
 .design-item{
@@ -448,6 +449,16 @@
 		margin-left: 50%;
 		margin-top: -10%;
 	}
+}
+.design-video{
+	background-image: url(../images/content/design/video/bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @import 'media';
