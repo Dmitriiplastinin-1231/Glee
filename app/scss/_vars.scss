@@ -43,7 +43,9 @@ $bg: #fef7f0;
 	line-height: 21px;
 	color: #fff;
 	@extend %dmsansregular-400;
-
+	&:hover{
+		background-color: $accent;
+	}
 }
 
 %checkbox-hidden{
