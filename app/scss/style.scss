@@ -320,7 +320,6 @@
 }
 .product-item{
 	text-align: center;
-	max-width: 270px;
 	height: 380px;
   box-shadow: 0px 6px 47px 3px rgba(37, 37, 37, 0.05);
   position: relative;
@@ -631,7 +630,7 @@
 		object-fit: cover;
 	}
 	&__text-box{
-		margin: 0 28px;
+		margin: 0 28px 12px;
 	}
 	&__item-title{
 		@extend %dmsansmedium-500;
@@ -642,14 +641,32 @@
 		min-height: 105px;
 	}
 	&__info{
-		display: flex;
-		font-size: 12px;
-		color: #222933;
 		margin-bottom: 10px;
 	}
-	&__authore{
+}
+.post-info{
+	display: flex;
+	color: #222933;
+	&__item{
+		svg{
+			fill:#222933;
+		}
+	}
+	&__item + .post-info__item{
 		margin-left: 25px;
-		color: inherit;
+	}
+}
+.date,
+.authore{
+	@extend %rubikregular-400;
+	text-transform: uppercase;
+	font-size: 12px;
+	display: flex;
+	height: 18px;
+	align-items: center;
+	color: inherit;
+	&__text{
+		margin-left: 5px;
 	}
 }
 .partners{
@@ -945,24 +962,6 @@
 		color: $title;
 		line-height: 1;
 	}
-	&__title{
-		text-transform: uppercase;
-		color: $title;
-		@extend %dmsansbold-700;
-		position: relative;
-		margin-bottom: 30px;
-		font-size: 18px;
-		&::after{
-			content: '';
-			position: absolute;
-			width: 38px;
-			height: 3px;
-			background-color: $auxiliary;
-			margin-left: 15px;
-			top: 45%;
-			transform: translateY(-50%);
-		}
-	}
 	&__label{
 		margin-bottom: 5px;
 		display: block;
@@ -979,6 +978,25 @@
 		display: flex;
 		justify-content: space-between;
 		border-radius: 6px;
+	}
+}
+.filter__title,
+.recent-post__title{
+	text-transform: uppercase;
+	color: $title;
+	@extend %dmsansbold-700;
+	position: relative;
+	margin-bottom: 30px;
+	font-size: 18px;
+	&::after{
+		content: '';
+		position: absolute;
+		width: 38px;
+		height: 3px;
+		background-color: $auxiliary;
+		margin-left: 15px;
+		top: 45%;
+		transform: translateY(-50%);
 	}
 }
 .filter-price{
@@ -1020,6 +1038,35 @@
 }
 .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single{
 	display: none;
+}
+
+.filter-search{
+	&__form{
+		position: relative;
+	}
+	&__input{
+		height: 43px;
+		width: 100%;
+		border: 1px solid #edf1f4;
+		border-radius: 6px;
+		outline: 0;
+    outline-offset: 0;
+    padding: 0 53px 0 5px;
+	}
+	&__btn{
+		position: absolute;
+		height: 43px;
+		width: 48px;
+		right: 0;
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #edf1f4;
+		border-radius: 6px;
+		border: none;
+		cursor: pointer;
+	}
 }
 
 .recent{
@@ -1289,6 +1336,117 @@
 		padding: 45px 0;
 	}
 }	
+
+.blog{
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__content{
+		width: 830px;
+	}
+	&__item{
+		margin-bottom: 50px;
+		&:last-child{
+			margin-bottom: 75px;
+		}
+	}
+	&__item-imgbox{
+		position: relative;
+		margin-bottom: 35px;
+	}
+	&__item-link{
+		display: inline;
+	}
+	&__img{
+		width: 830px;
+		height: 500px;
+		object-fit: cover;
+	}
+	&__info{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 275px;
+		padding: 28px 0 28px 22px;
+		background-color: $auxiliary;
+		display: flex;
+		color: #fff;
+		.post-info__item{
+			svg{
+				fill: #fff;
+			}
+		}
+	}
+	&__aside{
+		width: 270px;
+	}
+	&__item-title{
+		font-size: 36px;
+		color: #333;
+		margin-bottom: 25px;
+	}
+	&__item-text{
+		font-size: 16px;
+		color: $title;
+		margin-bottom: 25px;
+	}
+	&__item-btn{
+		width: 180px;
+		height: 60px;
+		border: 1px solid $auxiliary;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+		color: $auxiliary;
+		padding-right: 65px;
+		position: relative;
+		cursor: pointer;
+		&::after{
+			content: '';
+			position: absolute;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 22px;
+			height: 9px;
+			background-image: url(../images/icons/arrow-btn.svg);
+		}
+	}
+	&__pagination{
+		justify-content: start;
+	}
+}
+.recent-post{
+	&__item{
+		display: flex;
+		margin-bottom: 20px;
+	}
+	&__img{
+		width: 70px;
+		height: 70px;
+		object-fit: cover;
+	}
+	&__item-box{
+		margin-left: 20px;
+	}
+	&__item-title{
+		font-size: 14px;
+		line-height: 20px;
+		color: #333;
+		margin-bottom: 5px;
+	}
+	&__item-date{
+		color: #9a9a9a;
+		svg{
+			fill: #9a9a9a;
+		}
+	}
+}
+
+
+
 
 @import 'media';
 
