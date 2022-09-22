@@ -1,10 +1,55 @@
 $(function() {
+	$(function() {
+  		// copy content to clipboard
+  		function copyToClipboard(element) {
+  			var $temp = $("<input>");
+  			$("body").append($temp);
+  			$temp.val($(element).text()).select();
+  			document.execCommand("copy");
+  			$temp.remove();
+  		}
+  		// copy coupone code to clipboard
+  		$(".getinfo__item--address").click(function() {
+  			copyToClipboard(".getinfo__item-info--address");
+  			alert("Copied the text");
+  		});
+  	});
+  	$(function() {
+  		// copy content to clipboard
+  		function copyToClipboard(element) {
+  			var $temp = $("<input>");
+  			$("body").append($temp);
+  			$temp.val($(element).text()).select();
+  			document.execCommand("copy");
+  			$temp.remove();
+  		}
+  		// copy coupone code to clipboard
+  		$(".getinfo__item--email").click(function() {
+  			copyToClipboard(".getinfo__item-info--email");
+  			alert("Copied the text");
+  		});
+  	});
+  	$(function() {
+  		// copy content to clipboard
+  		function copyToClipboard(element) {
+  			var $temp = $("<input>");
+  			$("body").append($temp);
+  			$temp.val($(element).text()).select();
+  			document.execCommand("copy");
+  			$temp.remove();
+  		}
+  		// copy coupone code to clipboard
+  		$(".getinfo__item--phone").click(function() {
+  			copyToClipboard(".getinfo__item-info--phone");
+  			alert("Copied the text");
+  		});
+  	});
 	$('.related__slide').slick({
 		slidesToShow: 4,
-  		slidesToScroll: 1,
-  		appendArrows:'.related__slide-arrows',
-  		prevArrow:'<img class="related__slide-arrow related__slide-prev" src="images/icons/arrow.svg" alt="arrow-left">',
-  		nextArrow:'<img class="related__slide-arrow related__slide-next" src="images/icons/arrow.svg" alt="arrow-right">'
+		slidesToScroll: 1,
+		appendArrows:'.related__slide-arrows',
+		prevArrow:'<img class="related__slide-arrow related__slide-prev" src="images/icons/arrow.svg" alt="arrow-left">',
+		nextArrow:'<img class="related__slide-arrow related__slide-next" src="images/icons/arrow.svg" alt="arrow-right">'
 	})
 
 
@@ -24,15 +69,15 @@ $(function() {
 
 	$('.product-slide__thumb').slick({
 		asNavFor: '.product-slide__big',
-  		focusOnSelect: true,
+		focusOnSelect: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
 		vertical: true
 	});
 	$('.product-slide__big').slick({
 		asNavFor: '.product-slide__thumb',
-  		arrows: false,
-  		fade: true
+		arrows: false,
+		fade: true
 	});
 
 
@@ -60,9 +105,9 @@ $(function() {
 	$(".filter-price__input").ionRangeSlider({
 		type: "double",
 		onChange: function (data) {
-    		$('.filter-price__from').text(data.from);
-    		$('.filter-price__to').text(data.to);
-        }
+			$('.filter-price__from').text(data.from);
+			$('.filter-price__to').text(data.to);
+		}
 	});
 
 
@@ -79,14 +124,14 @@ $(function() {
 
 	
 	var containerEl1 = document.querySelector('[data-ref="filter"]');
-            var containerEl2 = document.querySelector('[data-ref="filter2"]');
+	var containerEl2 = document.querySelector('[data-ref="filter2"]');
 
-            var config = {
-                controls: {
-                    scope: 'local'
-                }
-            };
+	var config = {
+		controls: {
+			scope: 'local'
+		}
+	};
 
-            var mixer1 = mixitup(containerEl1, config);
-            var mixer1 = mixitup(containerEl2, config);
+	var mixer1 = mixitup(containerEl1, config);
+	var mixer1 = mixitup(containerEl2, config);
 });

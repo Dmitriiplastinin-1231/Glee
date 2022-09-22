@@ -42,6 +42,7 @@ $bg: #fef7f0;
 	font-size: 14px;
 	line-height: 21px;
 	color: #fff;
+	cursor: pointer;
 	@extend %dmsansregular-400;
 	&:hover{
 		background-color: $accent;
