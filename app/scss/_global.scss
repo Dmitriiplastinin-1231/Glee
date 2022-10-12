@@ -101,3 +101,16 @@ main{
 		}
 	}
 }
+
+
+@media (max-width: 560px){
+	.title{
+		font-size: 31px;
+	}
+}
+
+@media (max-width: 450px){
+	.title{
+		font-size: 25px;
+	}
+}

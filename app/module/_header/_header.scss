@@ -1,0 +1,233 @@
+.header{
+	padding: 50px;
+	background-color: #fff;
+	text-align: center;
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.logo{
+	z-index: 9;
+}
+.menu{
+	z-index: 7;
+	&__btn{
+		display: none;
+	}
+	&__list{
+		transition: all .3s;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+	&__list-link{
+		@extend %rubikmedium-500;
+		color: $default;
+	}
+	&__list-item + .menu__list-item{
+		margin-left: 30px;
+	}
+}
+
+.user-nav{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 7;
+	&__link{
+		position: relative;
+	}
+	&__link-inner{
+		display: flex;
+		justify-content: space-between;
+		background-color: $accent;
+		margin: 0 38px;
+		max-width: 140px;
+    	height: 51px;
+    	align-items: center;
+    	width: 100%;
+    	position: relative;
+    	&::before,
+    	&::after{
+    		content: '';
+    		position: absolute;
+    		border-radius: 50%;
+    		width: 51px;
+    		height: 51px;
+    		z-index: -1;
+    		background-color: $accent;
+    	}
+    	&::before{
+    		left: -20px;
+    	}
+    	&::after{
+    		right: -20px;
+    	}
+	}
+	&__link-inner .user-nav__link:first-child{
+		padding: 0 29px 0 20px;
+		background-color: transparent;
+	}
+	&__link-inner .user-nav__link:first-child .user-nav__link-num{
+		right: 21px;
+	}
+	&__link-inner .user-nav__link:last-child{
+		margin-right: 20px;
+		padding: 0 0 0 30px;
+		background-color: transparent;
+	}
+	&__link-num{
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		top: -8px;
+		right: -8px;
+		background-color: #fff;
+		border-radius: 50%;
+		text-align: center;
+		line-height: 16px;
+		font-size: 10px;
+	}
+	&__link{
+		padding: 18px;
+		border-radius: 50%;
+	}
+	&__link:first-child{
+		background-color: #edf1f4;
+	}
+	&__link:last-child{
+		padding: 14px;
+		background-color: #a3bbc8;
+	}
+	.user-nav__line{
+		width: 1px;
+		height: 32px;
+		background-color: #fde7d3;
+	}
+}
+@media (max-width: 1200px){
+	.menu{
+		order: 1;
+		margin-left: 40px;
+		&__btn{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 22px;
+			width: 30px;
+			border: none;
+			background-color: transparent;
+			position: relative;
+			padding: 0;
+			margin-top: 10px;
+			cursor: pointer;
+			span{
+				width: 100%;
+				height: 3px;
+				background-color: $default;
+			}
+			&::after,
+			&::before{
+				position: absolute;
+				content: "";
+				width: 100%;
+				height: 3px;
+				background-color: $default;
+			}
+			&::after{
+				top: 0;
+			}
+			&::before{
+				bottom: 0;
+			}
+		}
+		&__list{
+			transform: translateY(-200%);
+			position: absolute;
+			top: 160px;
+			bottom: 0;
+			left: 0;
+			height: auto;
+			width: 100%;
+			flex-direction: column;
+			z-index: 5;
+			background-color: #fff;
+			padding-bottom: 20px;
+			&.menu__list--active{
+				transform: translateY(0);
+			}
+		}
+		&__list-item+.menu__list-item{
+			margin-left: 0;
+		}
+		&__list-item{
+			width: 100%;
+			margin-bottom: 5px;
+			&:hover{
+				margin-bottom: 3px;
+				border-bottom: 2px solid $title;
+
+			}
+		}
+		&__list-link{
+			display: block;
+			padding: 15px 0;
+		}
+	}
+	.user-nav{
+		margin-left: auto;
+	}
+}
+@media (max-width: 700px){
+	.header__inner{
+		flex-wrap: wrap;
+
+	}
+	.menu{
+		width: 100%;
+		&__btn{
+			margin: 15px 8px 15px auto;
+		}
+	}
+}
+@media (max-width: 620px){
+	.menu{
+		width: auto;
+		order: 0;
+	}
+	.user-nav{
+		width: 100%;
+	}
+	.menu__list{
+		top: 205px;
+	}
+}
+@media (max-width: 450px){
+	.header__inner{
+		.logo{
+			margin-left: -5px
+		}
+	}
+	.menu{
+		margin-left: 0;
+		&__btn{
+			margin-bottom: 20px;
+		}
+		&__list{
+			top: 230px;
+		}
+	}
+	.user-nav{
+		flex-wrap: wrap;
+		&__link-inner{
+			max-width: 100%;
+			margin: 0 15px 15px;
+		}
+		&__link--first{
+			order: 1;
+		}
+	}
+}

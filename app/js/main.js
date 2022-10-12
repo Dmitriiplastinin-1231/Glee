@@ -1,4 +1,15 @@
 $(function() {
+
+	$('.footer-top__title--activity').on('click', function(){
+		$(this).siblings().slideToggle()
+		$(this).toggleClass('footer-top__title--active')
+	})
+
+	$('.menu__btn').on('click', function(){
+		$('.menu__list').toggleClass('menu__list--active')
+	});
+
+
 	$(function() {
   		// copy content to clipboard
   		function copyToClipboard(element) {

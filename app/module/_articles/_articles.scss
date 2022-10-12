@@ -1,0 +1,119 @@
+@import '../module/_partners/partners';
+.articles{
+	background: linear-gradient(#fff 43%, $bg 43%);
+	&__title-box{
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		flex-wrap: wrap;
+	}
+	&__title-link{
+		padding-right: 25px;
+		position: relative;
+		@extend %dmsansbold-700;
+		color: #262626;
+		font-size: 16px;
+	}
+	&__title-link::after{
+		content: "";
+		width: 7px;
+		height: 12px;
+		background-image: url(../images/icons/articles-arrow.svg);
+		position: absolute;
+		background-repeat: no-repeat;
+		right: 0;
+		top: 8px;
+	}
+	&__items{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+	&__item{
+		max-width: 370px;
+		background-color: #fff;
+	}
+	&__item-imglink{
+		display: block;
+		margin-bottom: 30px;
+	}
+	&__img{
+		height: 250px;
+		object-fit: cover;
+	}
+	&__text-box{
+		margin: 0 28px 12px;
+	}
+	&__item-title{
+		@extend %dmsansmedium-500;
+		color: #262626;
+		border-bottom: 1px solid #e0e0e0;
+		padding-bottom: 14px;
+		margin-bottom: 10px;
+		min-height: 105px;
+	}
+	&__info{
+		margin-bottom: 10px;
+	}
+}
+.post-info{
+	display: flex;
+	color: #222933;
+	&__item{
+		svg{
+			fill:#222933;
+		}
+	}
+	&__item + .post-info__item{
+		margin-left: 25px;
+	}
+}
+.date,
+.authore{
+	@extend %rubikregular-400;
+	text-transform: uppercase;
+	font-size: 12px;
+	display: flex;
+	height: 18px;
+	align-items: center;
+	color: inherit;
+	&__text{
+		margin-left: 5px;
+	}
+}
+
+@media (max-width: 1200px){
+	.articles{
+		background: linear-gradient(#fff 27%, #fef7f0 27%);
+		&__items{
+			justify-content: center;
+		}
+		&__item{
+			margin: 0 20px 20px;
+		}
+	}
+}
+@media (max-width: 850px){
+	.articles{
+		background: linear-gradient(#fff 22%, #fef7f0 22%);
+		&__item{
+			max-width: 100%;
+			width: 100%;
+		}
+		&__item-img{
+			object-fit: cover;
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 650px){
+	.articles{
+		background: linear-gradient(#fff 16%, #fef7f0 16%);
+		&__title-box{
+			margin-bottom: 35px;
+		}
+		&__item{
+			margin: 10px 0;
+		}
+	}
+}
