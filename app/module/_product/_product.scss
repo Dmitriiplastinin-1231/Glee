@@ -22,7 +22,8 @@
   	display: none;
   }
   &__images{
-  	max-width: 240px;
+    max-width: 240px;
+    margin: 0 10px;
   }
   &__link-box{
   	transition: all .5s;

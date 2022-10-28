@@ -1,9 +1,18 @@
 $(function() {
 
+
+	$('.shop__filter-btn').on('click', function(){
+		$('.shop__filters').slideToggle()
+	})
+
+	$('.comment-button').on('click', function(){
+		$(this).parent().parent().next().slideToggle()
+	});
+
 	$('.footer-top__title--activity').on('click', function(){
 		$(this).siblings().slideToggle()
 		$(this).toggleClass('footer-top__title--active')
-	})
+	});
 
 	$('.menu__btn').on('click', function(){
 		$('.menu__list').toggleClass('menu__list--active')
@@ -25,7 +34,7 @@ $(function() {
   			alert("Copied the text");
   		});
   	});
-  	$(function() {
+	$(function() {
   		// copy content to clipboard
   		function copyToClipboard(element) {
   			var $temp = $("<input>");
@@ -40,7 +49,7 @@ $(function() {
   			alert("Copied the text");
   		});
   	});
-  	$(function() {
+	$(function() {
   		// copy content to clipboard
   		function copyToClipboard(element) {
   			var $temp = $("<input>");
@@ -60,7 +69,27 @@ $(function() {
 		slidesToScroll: 1,
 		appendArrows:'.related__slide-arrows',
 		prevArrow:'<img class="related__slide-arrow related__slide-prev" src="images/icons/arrow.svg" alt="arrow-left">',
-		nextArrow:'<img class="related__slide-arrow related__slide-next" src="images/icons/arrow.svg" alt="arrow-right">'
+		nextArrow:'<img class="related__slide-arrow related__slide-next" src="images/icons/arrow.svg" alt="arrow-right">',
+		responsive: [
+			{
+				breakpoint: 1201,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 826,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 601,
+				settings: {
+					slidesToShow: 1
+				}
+			},
+		]
 	})
 
 
@@ -83,12 +112,21 @@ $(function() {
 		focusOnSelect: true,
 		slidesToShow: 3,
 		slidesToScroll: 1,
-		vertical: true
+		vertical: true,
 	});
 	$('.product-slide__big').slick({
 		asNavFor: '.product-slide__thumb',
 		arrows: false,
-		fade: true
+		fade: true,
+		draggable: false,
+		responsive: [
+		{
+			breakpoint: 991,
+			settings: {
+				draggable: true
+			}
+		}
+		]
 	});
 
 
@@ -100,10 +138,12 @@ $(function() {
 
 	$('.shop__line').on('click', function () {
 		$('.product-item').addClass('product-item--line');
+		$('.shop-content__inner').addClass('shop-content__no-grid');
 	});
 
 	$('.shop__grid').on('click', function () {
 		$('.product-item').removeClass('product-item--line');
+		$('.shop-content__inner').removeClass('shop-content__no-grid');
 	});
 
 	$(".star").rateYo({

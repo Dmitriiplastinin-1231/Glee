@@ -103,6 +103,7 @@
 	font-size: 14px;
 	color: $default;
 	line-height: 48px;
+	padding: 0 10px;
 	&__form{
 		border-bottom: 1px solid #f6f6f6;
 		margin-bottom: 30px;
@@ -146,7 +147,9 @@
 	margin-bottom: 120px;
 	&__inner{
 		display: flex;
-		column-gap: 45px
+	}
+	&__img{
+		margin-right: 30px;
 	}
 	&__years{
 		display: flex;
@@ -232,6 +235,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 	&__item{
 		text-align: center;
@@ -259,6 +263,7 @@
 	}
 	&__content{
 		max-width: 300px;
+		margin-right: 25px;
 	}
 	&__text{
 		font-size: 16px;
@@ -322,6 +327,29 @@
 }
 
 .shop{
+	&__filter-btn{
+		border: none;
+		background-color: $auxiliary;
+		width: 45px;
+		height: 45px;
+		border-radius: 9px;
+		position: fixed;
+		right: 15px;
+		bottom: 50px;
+		cursor: pointer;
+		z-index: 21;
+		display: none;
+		svg{
+			margin-top: 8px;
+		}	
+		&:hover{
+			svg{
+				path{
+					fill: #fff;
+				}
+			}
+		}
+	}
 	&__button{
 		padding: 0;
 		border: none;
@@ -342,6 +370,8 @@
 	&__filters{
 		max-width: 270px;
 		width: 100%;
+
+		z-index: 20;
 	}
 }
 
@@ -564,6 +594,9 @@
     margin-bottom: 26px;
     max-width: 136px;
   }
+  &__thumb{
+		margin-right: 10px;
+  }
 	&__thumb-item{
 		max-width: 136px;
 		border: 1px solid #f2f2f2;
@@ -665,7 +698,7 @@
 	margin-bottom: 125px;
 	&__top{
 		max-width: 855px;
-		margin: 0 auto 30px;
+		margin: 0 auto 20px;
 		padding: 0 30px 0 10px;
 	}
 	&__top-item{
@@ -677,6 +710,7 @@
 		border-radius: 4px;
 		color: $title;
 		margin-left: 8px;
+		margin-bottom: 10px;
 	}
 	&__top-item--active{
 		background-color: $auxiliary;
@@ -735,6 +769,7 @@
 	}
 	&__content{
 		width: 830px;
+		margin-right: 15px;
 	}
 	&__item{
 		margin-bottom: 50px;
@@ -763,6 +798,7 @@
 		background-color: $auxiliary;
 		display: flex;
 		color: #fff;
+		column-gap: 10px;
 		.post-info__item{
 			svg{
 				fill: #fff;
@@ -1001,6 +1037,26 @@
 		}
 	}
 }
+.comment-button{
+	background-color: transparent;
+	border: none;
+	color: #516278;
+  font-size: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+  &::after{
+  	content: "";
+    position: absolute;
+    background-image: url(../images/icons/reply-arrow.svg);
+    transform: translateY(-50%) rotate(90deg);
+    width: 10px;
+    height: 8px;
+    right: 0;
+    top: 54%;
+  }
+}
 .comment-form{
 	margin-bottom: 120px;
 	&__box-input{
@@ -1008,9 +1064,12 @@
 		justify-content: space-between;
 		margin-bottom: 21px;
 		input{
-			width: 400px;
+			width: 100%;
 			height: 50px;
 
+		}
+		:nth-child(1){
+			margin-right: 30px;
 		}
 	}
 	&__textarea{
@@ -1108,7 +1167,8 @@
 		justify-content: space-between;
 	}
 	&__form{
-		width: 620px;	
+		width: 620px;
+		margin-right: 20px;	
 	}
 	&__form-box{
 		display: flex;
