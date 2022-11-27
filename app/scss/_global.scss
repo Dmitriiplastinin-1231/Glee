@@ -8,6 +8,7 @@ body{
 	line-height: 30px;
 	display: flex;
 	flex-direction: column;
+	@extend %rubikregular-400;
 }
 
 main{
@@ -20,10 +21,96 @@ main{
 	padding: 0 15px;
 }
 
+.container-content{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+.title{
+	@extend %dmsansbold-700;
+	font-size: 36px;
+	color: $title-section;
+}
+.title-block{
+	@extend %dmsansbold-700;
+	font-size: 36px;
+	color: $title;
+}
+.content-btn{
+	margin-top: 35px;
+}
+.content-btn__btn{
+	background-color: transparent;
+	border:none;
+	padding: 0;
+	cursor: pointer;
+	text-transform: uppercase;
+	margin: 0 5px;
+	@extend %dmsansbold-700;
+	font-size: 16px;
+	color: #8b8b8b;
+}
+.jq-ry-container{
+	padding: 7px 0;
+	display: inline-block;
+}
+.jq-ry-normal-group.jq-ry-group svg{
+	fill:#d6d6d6;
+}
 .footer a{
 	color: #7b7b7b;
 	display: block;
 	font-size: 14px;
 	line-height: 22px;
-	@extend %rubikregular-400;
+}
+.pagination{
+	display: flex;
+	justify-content: center;
+	&__list{
+		display: flex;
+	}
+	&__item{
+		width: 48px;
+		height: 48px;
+		border: 1px solid $auxiliary;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		+ .pagination__item{
+			margin-left: 15px;
+		}
+	}
+	&__item--active{
+		background-color: $auxiliary;
+	}
+	&__link{
+		font-size: 16px;
+		color: $title;
+	}
+	&__next{
+		padding: 0 17px;
+		font-size: 16px;
+		color: $title;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		border: 1px solid $auxiliary;
+		margin-left: 15px;
+		&:hover{
+			background-color: $auxiliary;
+		}
+	}
+}
+
+
+@media (max-width: 560px){
+	.title{
+		font-size: 31px;
+	}
+}
+
+@media (max-width: 450px){
+	.title{
+		font-size: 25px;
+	}
 }

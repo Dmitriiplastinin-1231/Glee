@@ -29,6 +29,10 @@ $bg: #fef7f0;
 	font-family: 'Rubik-Regular', sans-serif;
 	font-weight: 400;
 }
+%rubik-light-300{
+	font-family: 'Rubik-Light', sans-serif;
+	font-weight: 300;
+}
 
 
 %btn{
@@ -38,6 +42,17 @@ $bg: #fef7f0;
 	font-size: 14px;
 	line-height: 21px;
 	color: #fff;
-	@extend %dmsansregular-400
+	cursor: pointer;
+	@extend %dmsansregular-400;
+	&:hover{
+		background-color: $accent;
+	}
+}
 
+%checkbox-hidden{
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	position: absolute;
 }

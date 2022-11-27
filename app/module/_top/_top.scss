@@ -1,0 +1,94 @@
+.top{
+	padding: 105px 0;
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		grid-gap: 30px;
+	}
+}
+.top-item{
+	width: 870px;
+	height: 390px;
+	background-color: #feefe2;
+	position: relative;
+	&__img{
+		position: absolute;
+		top: -25%;
+		right: 58%;
+	}
+	&__descr{
+		margin: 85px 0px 0px auto;
+		width: 350px;
+	}
+	&__title{
+		@extend %dmsansbold-700;
+		font-size: 26px;
+		line-height: 32px;
+		color: $title;
+	}
+	&__text{
+		font-size: 16px;
+		line-height: 30px;
+		color:$title;
+		margin-bottom: 35px;
+	}
+	&__btn{
+		@extend %rubikmedium-500;
+		font-size: 15px;
+		color: $default;
+		padding: 20px 86px 20px 20px;
+		border: 1px solid #b3b7b5;
+		border-radius: 4px;
+		position: relative;
+	}
+	&__btn::after{
+		content: "";
+		position: absolute;
+		width: 22px;
+		height: 9px;
+		background-image: url(../images/icons/arrow.svg);
+		background-repeat: no-repeat;
+		background-size: cover;
+		top: 40%;
+		margin-left: 45px;
+	}
+}
+
+
+@media (max-width: 1300px){
+	.top{
+		padding: 80px 0 0;
+		&__inner{
+			flex-wrap: wrap;
+		}
+
+	}
+	.top-item{
+		margin: 0 auto 80px;
+	}
+}
+@media (max-width: 700px){
+	.top{
+		padding: 0 0 45px;
+	}
+	.top-item{
+		margin: 0 auto 10px;
+		height: 330px;
+		&__img{
+			display: none;
+		}
+		&__descr{
+			margin: 65px auto;
+			padding: 0 10px;
+		}
+	}
+}
+@media (max-width: 450px){
+	.top-item{
+		height: 325px;
+		&__descr{
+			width: 100%;
+			margin: 59px auto;
+		}
+	}
+}
